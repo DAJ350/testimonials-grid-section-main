@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.attribution {
+    display: none;
+}
+
 /* Colour Styles */
 
 :root {
@@ -55,25 +59,26 @@
 /* Body Design */
 
 body {
-    max-height: 100svh;
+    min-height: 100%;
+    min-width: 100%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     background-color: var(--soft-blue);
-    padding: 18.22222222222222svh 11.45833333333333svw;
-    row-gap: 1rem;
+    padding: 18.22222222222222% 11.45833333333333%;
 }
 
 /* Grid Section Design*/
 .main-content {
     width: 100%;
-    max-height: 63.55555555555556%;
+    height: 63.55555555555556%;
+    /*min-height: 95.97315436241611%;*/
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    row-gap: 2.162162162162162%;
-    column-gap: 2.702702702702703%;
+    row-gap: 4.195804195804196%;
+    column-gap: 2.08333333%;
 }
 
 /* Testimonial Card Design */
@@ -192,6 +197,7 @@ body {
 .testimonial-card--dark-blue-bg .testimonial-card__review-text {
     color: var(--white);
 }
+
 /* Testimonial Card Grid Positioning */
 
 .testimonial-card--daniel-clifford {
@@ -211,4 +217,24 @@ body {
 }
 .testimonial-card--kira-whittle {
     grid-area: 1 / 4 / 3 / 5;
+}
+
+/* Tablet and Mobile */
+
+@media only screen and (max-width: 930px) {
+    body {
+        min-height: 100svh;
+        min-width: 100%;
+        padding: 4.4375rem 1.5rem;
+    }
+
+    .main-content {
+        display: flex;
+        flex-flow: column nowrap;
+        row-gap: 1.5rem;
+    }
+
+    .testimonial-card--purple-bg .testimonial-card__bg-quote-pattern {
+        left: 60.85626911314985%;
+    }
 }
